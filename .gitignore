@@ -9,3 +9,7 @@ dist/
 # Ignore all files ending with a specific extension
 *.log
 *.tmp
+
+#Ignore environment variables
+.env
+.env.local
