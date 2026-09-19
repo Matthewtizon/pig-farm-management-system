@@ -1,12 +1,9 @@
-
-
 const express = require('express');
 const app = express();
 const PORT = 3000;
+const {con} = require("./db.js");
 
-require("dotenv").config()
-
-console.log(process.env.DB_HOST);
+con.connect().then(()=> console.log("DB Connected"))
 
 app.get('/', (req, res) => {
     res.send('Hello');
