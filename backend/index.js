@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
-const {con} = require("./db.js");
+const {con} = require("./src/db/connections.js");
 
 con.connect().then(()=> console.log("DB Connected"))
 
