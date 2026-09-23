@@ -1,7 +1,15 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const PORT = 3000;
-const {con} = require("./db.js");
+
+const pigRoutes = require("./src/routes/pigRoutes.js");
+
+const { con } = require("./db.js");
+
+app.use(express.json());
+app.use(cors());
+
 
 con.connect().then(()=> console.log("DB Connected"))
 
@@ -15,6 +23,9 @@ app.get("/health-check", (req, res) => {
         message: 'Server is healthy'
     });
 });
+
+
+app.use("/api", pigRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is Running at http://localhost:${PORT}`);
