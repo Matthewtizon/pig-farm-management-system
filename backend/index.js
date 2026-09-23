@@ -10,6 +10,7 @@ const { con } = require("./db.js");
 app.use(express.json());
 app.use(cors());
 
+const {con} = require("./src/db/connections.js");
 
 con.connect().then(()=> console.log("DB Connected"))
 
