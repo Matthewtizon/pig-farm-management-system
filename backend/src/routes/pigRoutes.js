@@ -1,12 +1,17 @@
-cosnt express = require('express');
+const express = require('express');
 const router = express.router();
 
-// controllers
+// controllers variable
+const { fetchPigs } = require("../controllers/pigController.js");
 
+// endpoints
+router.get('/fetch-pigs' fetchPigs,);
 
+router.post('/create-pig',);
 
-// endpoints 
+router.update('/update-pig/?',);
 
+router.delete('/delete-pig/?',);
 
 
 
